@@ -20,9 +20,9 @@ matrix:
 # Don't let Travis CI execute './gradlew assemble' by default
 install:
 # Disable Gradle daemon according to https://docs.gradle.org/4.0/userguide/gradle_daemon.html
-# - mkdir -p ~/.gradle && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
+  - mkdir -p ~/.gradle && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
 # Display Gradle, Groovy, JVM and other versions
   - ./gradlew -version
 
 script:
-  - ./gradlew build --scan
+  - ./gradlew build --scan --info --stacktrace
